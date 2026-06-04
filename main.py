@@ -15,3 +15,8 @@ import sys
 # The Polish (Hours 31–40): Use the argparse module to let users launch the game 
 # with specific custom parameters via the command line (e.g., --difficulty hard --ship dreadnought). 
 # Clean up the interface using basic ANSI escape codes for colored text.
+
+
+
+
+#upon creating a new game, we need to initialize the crew (minimum 1 - captain)
