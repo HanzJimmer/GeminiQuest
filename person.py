@@ -7,7 +7,7 @@ class Role(Enum):
     ENGINEER = 3
     STANDARD = 4
 
-    #each crew will need name, role, health (initialize to 10?), hunger (initialize to 10?)
+    #each crew will need name, role, health , hunger
         #add currency to buy initial supplies later; for now, just initialize with spare parts
 
 class Person():
@@ -18,10 +18,10 @@ class Person():
         self.hunger = MAX_HUNGER
 
     def lose_health(self, amount: int):
-        pass
+        self.health -= amount
 
     def heal(self, amount: int):
-        pass
+        self.health += amount
 
     def passive_hunger(self):
         self.hunger -= 1

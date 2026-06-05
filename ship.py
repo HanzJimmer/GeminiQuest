@@ -12,19 +12,19 @@ class Ship():
         self.ship_inventory = {"spare_parts" : 2, "fuel" : 100, "food" : 20}
 
     def add_inventory(self, item_name: str, amount: int):
-        pass
+        self.inventory[item_name] += amount
 
     def subtract_inventory(self, item_name: str, amount: int):
-        pass
+        self.inventory[item_name] -= amount
 
     def lose_hull(self, amount: int):
-        pass
+        self.ship_health -= amount
 
     def lose_shield(self, amount: int):
-        pass
+        self.ship_shields -= amount
 
     def repair_hull(self, amount: int):
-        pass
+        self.ship_health += amount
 
     def repair_shield(self, amount: int):
-        pass
+        self.ship_shields += amount
