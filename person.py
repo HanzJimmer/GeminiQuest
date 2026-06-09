@@ -11,7 +11,7 @@ class Role(Enum):
         #add currency to buy initial supplies later; for now, just initialize with spare parts
 
 class Person():
-    def __init__(self, name: str, role: str):
+    def __init__(self, name: str, role: Role):
         self.name = name
         self.role = role
         self.health = MAX_CREW_HEALTH
@@ -19,14 +19,19 @@ class Person():
 
     def lose_health(self, amount: int):
         self.health -= amount
+        if (self.health <= 0): {
+            self.kill() #kill character
+        }
 
     def heal(self, amount: int):
-        self.health += amount
+        self.health = min(self.health + amount, MAX_CREW_HEALTH)
 
     def passive_hunger(self):
-        self.hunger -= 1
-        return
+        self.hunger = max(self.hunger - 1, 0)
+        if (self.hunger <= 0): {
+            self.lose_health(1)
+        }
     
     def eat(self):
-        self.hunger += 1
+        self.hunger = min(self.hunger + 1, MAX_HUNGER)
         return

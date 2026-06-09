@@ -10,21 +10,27 @@ class Ship():
         self.ship_health = MAX_SHIP_HEALTH
         self.ship_shields = MAX_SHIP_SHIELDS_1
         self.ship_inventory = {"spare_parts" : 2, "fuel" : 100, "food" : 20}
+        self.distance_remaining = DISTANCE_TO_GEMINI
 
     def add_inventory(self, item_name: str, amount: int):
-        self.inventory[item_name] += amount
+        if item_name in self.ship_inventory:
+            self.ship_inventory[item_name] += amount
 
     def subtract_inventory(self, item_name: str, amount: int):
-        self.inventory[item_name] -= amount
+        if item_name in self.ship_inventory:
+            self.ship_inventory[item_name] -= amount
 
     def lose_hull(self, amount: int):
         self.ship_health -= amount
+        if self.ship_health <= 0: {
+            self.kill()
+        }
 
     def lose_shield(self, amount: int):
-        self.ship_shields -= amount
+        self.ship_shields = max(self.ship_shields - amount, 0)
 
     def repair_hull(self, amount: int):
-        self.ship_health += amount
+        self.ship_health = min(self.ship_health + amount, MAX_SHIP_HEALTH)
 
     def repair_shield(self, amount: int):
-        self.ship_shields += amount
+        self.ship_shields = min(self.ship_shields + amount, MAX_SHIP_SHIELDS_1)
