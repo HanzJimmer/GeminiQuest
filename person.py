@@ -1,5 +1,6 @@
 from constants import *
 from enum import Enum
+import random
 
 class Role(Enum):
     CAPTAIN = 1
@@ -35,3 +36,9 @@ class Person():
     def eat(self):
         self.hunger = min(self.hunger + 1, MAX_HUNGER)
         return
+    
+def new_crew():
+    crew_list = []
+    for num in range[4]:
+        crew_list.append(Person(f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}", Role[num]))
+    return crew_list

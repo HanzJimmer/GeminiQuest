@@ -1,5 +1,10 @@
-import pygame
 import sys
+from rich import print
+from rich.console import Console
+from rich.table import Table
+from constants import *
+from ship import *
+from person import *
 
 # the eventual goal is to create a game that is similar to Oregon Trail
 # I used Gemini to see the basics of what might be a general path; answer is below
@@ -17,6 +22,15 @@ import sys
 # Clean up the interface using basic ANSI escape codes for colored text.
 
 
-
-
 #upon creating a new game, we need to initialize the crew (minimum 1 - captain)
+def main():
+    game_ship = Ship(new_crew())
+    console = Console(style = "black on white")
+    game_running = True
+    while game_running:
+       console.clear()
+#use rich.layout to create boxes and only update each part as needed
+
+
+if __name__ == "__main__":
+    main()

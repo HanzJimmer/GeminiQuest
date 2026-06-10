@@ -1,3 +1,6 @@
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+
 MAX_SHIP_HEALTH = 100
 MAX_SHIP_SHIELDS_1 = 25
 MAX_SHIP_SHIELDS_2 = 50
@@ -7,3 +10,6 @@ MAX_CREW_HEALTH = 10
 MAX_HUNGER = 10
 
 DISTANCE_TO_GEMINI = 34
+
+FIRST_NAMES = ["Alex", "Jordan", "Taylor", "Morgan", "Sam"]
+LAST_NAMES = ["Smith", "Jones", "Miller", "Davis", "Garcia"]
