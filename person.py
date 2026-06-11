@@ -39,6 +39,6 @@ class Person():
     
 def new_crew():
     crew_list = []
-    for num in range[4]:
-        crew_list.append(Person(f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}", Role[num]))
+    for role in range(1, 5):
+        crew_list.append(Person(f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}", Role(role)))
     return crew_list

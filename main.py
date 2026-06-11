@@ -2,6 +2,7 @@ import sys
 from rich import print
 from rich.console import Console
 from rich.table import Table
+from rich.layout import Layout
 from constants import *
 from ship import *
 from person import *
@@ -27,8 +28,19 @@ def main():
     game_ship = Ship(new_crew())
     console = Console(style = "black on white")
     game_running = True
-    while game_running:
-       console.clear()
+    layout = Layout()
+    layout.split_column(
+        Layout(name = "upper"),
+        Layout(name = "lower")
+    )
+    layout["upper"].split_row(
+        Layout(name = "upperleft"),
+        Layout(name = "upperright")
+    )
+    
+    print(layout)
+    #while game_running:
+    #   console.clear()
 #use rich.layout to create boxes and only update each part as needed
 
 
