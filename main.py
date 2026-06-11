@@ -37,7 +37,7 @@ def main():
         Layout(name = "upperleft"),
         Layout(name = "upperright")
     )
-    
+    layout["upperleft"].update(str(game_ship))
     print(layout)
     #while game_running:
     #   console.clear()

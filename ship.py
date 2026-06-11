@@ -12,6 +12,9 @@ class Ship():
         self.ship_inventory = {"spare_parts" : 2, "fuel" : 100, "food" : 20}
         self.distance_remaining = DISTANCE_TO_GEMINI
 
+    def __str__(self):
+        return f"Ship health: {self.ship_health}\nShields: {self.ship_shields}\nDistance to Gemini: {self.distance_remaining} lightyears"
+
     def add_inventory(self, item_name: str, amount: int):
         if item_name in self.ship_inventory:
             self.ship_inventory[item_name] += amount
