@@ -1,8 +1,10 @@
 import sys
 from rich import print
 from rich.console import Console
+from rich.panel import Panel
 from rich.table import Table
 from rich.layout import Layout
+from rich.prompt import Prompt
 from constants import *
 from ship import *
 from person import *
@@ -24,23 +26,32 @@ from person import *
 
 
 #upon creating a new game, we need to initialize the crew (minimum 1 - captain)
-def main():
+def main(): 
     game_ship = Ship(new_crew())
-    console = Console(style = "black on white")
+    console = Console(style = "white on black", width=80, height=24)
     game_running = True
     layout = Layout()
     layout.split_column(
-        Layout(name = "upper"),
-        Layout(name = "lower")
+        Layout(name = "game_view", ratio=1),
+        Layout(name = "input_buffer", size=3)
     )
+
+    layout["game_view"].split_column(
+        Layout(name="upper", ratio=1),
+        Layout(name="lower", ratio=1)
+    )
+
     layout["upper"].split_row(
-        Layout(name = "upperleft"),
-        Layout(name = "upperright")
+        Layout(Panel(str(game_ship), title="Ship Statistics"), name = "upperleft"),
+        Layout(Panel("Map goes here?", title="Navigation"), name = "upperright")
     )
-    layout["upperleft"].update(str(game_ship))
-    print(layout)
-    #while game_running:
-    #   console.clear()
+    with console.screen() as screen:
+        while game_running:
+            console.clear()
+            console.print(layout)
+            action = Prompt.ask("What is your command Captain?")
+            if action.lower() == "quit":
+                break
 #use rich.layout to create boxes and only update each part as needed
 
 
