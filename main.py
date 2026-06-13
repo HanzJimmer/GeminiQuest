@@ -49,7 +49,7 @@ def main():
         while game_running:
             console.clear()
             console.print(layout)
-            action = Prompt.ask("What is your command Captain?")
+            action = Prompt.ask("What is your command, Captain?")
             if action.lower() == "quit":
                 break
 #use rich.layout to create boxes and only update each part as needed
