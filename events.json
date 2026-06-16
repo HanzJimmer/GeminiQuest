@@ -1,6 +1,6 @@
 {
     "solar_flare": {
-        "issue": "A blinding radiation wave is approaching your hull!",
+        "issue": "A blinding radiation wave is approaching your ship from a nearby star!",
         "choices": {
             "1": {"text": "Shield overcharge (Requires Engineer)", "stat_test": "engineering", "base_fail_damage": 30},
             "2": {"text": "Fly through the wake (Requires Pilot)", "stat_test": "piloting", "base_fail_damage": 50}
@@ -9,92 +9,92 @@
     "space_pirates": {
         "issue": "A rogue cruiser demands 10 units of fuel!",
         "choices": {
-            "1": {"text": "Fight back (Requires Weapons Officer)", "stat_test": "combat", "base_fail_damage": 40},
-            "2": {"text": "Bribe them with fuel", "stat_test": None, "fuel_cost": 10}
+            "1": {"text": "Fight back (Requires Weapons Officer)", "stat_test": "piloting", "base_fail_damage": 40},
+            "2": {"text": "Bribe them with fuel", "stat_test": null, "fuel_cost": 10}
         }
     },
     "asteroid_belt": {
-        "issue": "",
+        "issue": "Your ship comes across an asteroid belt.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Fly around the asteroid belt", "stat_test": null, "fuel_cost": 10},
+            "2": {"text": "Fly through the asteroid belt", "stat_test": "piloting", "base_fail_damage": 30}
         }
     },
     "food_spoils": {
-        "issue": "",
+        "issue": "Some of your food spoils.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Throw out all spoiled food", "stat_test": null, "food_cost": 5},
+            "2": {"text": "Throw out the worst, but use what you can", "stat_test": null, "sick_chance": 50}
         }
     },
     "planet_encounter": {
-        "issue": "",
+        "issue": "You come accross a new planet.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Spend a day scavenging and studying", "stat_test": "medicine", "fuel_cost": 10, "food_add": 3},
+            "2": {"text": "Note location for later discovery", "stat_test": null, "base_fail_damage":null}
         }
     },
     "derelict_encounter": {
-        "issue": "",
+        "issue": "You come accross a derilict ship.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Say a prayer and fly by", "stat_test": null, "base_fail_damage": null},
+            "2": {"text": "Stop and scavenge for supplies", "stat_test": null, "fuel_cost": 10, "food_add": 2, "spare_parts_add": 3}
         }
     },
     "dysentery": {
-        "issue": "",
+        "issue": "A crewmember has dysentery.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Keep flying", "stat_test": null, "sick_chance": 65},
+            "2": {"text": "Treat the illness (requires Medic)", "stat_test": "medicine", "sick_chance":10}
         }
     },
     "air_leak": {
-        "issue": "",
+        "issue": "The hull gets a small breach and starts leaking air.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Get the Engineer to fix it up good (requires Engineer)", "stat_test": "engineering", "base_fail_damage": 0},
+            "2": {"text": "Throw some duct tape over it", "stat_test": null, "health_cost": 2}
         }
     },
     "fuel_leak": {
-        "issue": "",
+        "issue": "Your control panel indicates a fuel leak",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Space Walk and fix the fuel lines (requires Engineer or Spare Parts)", "stat_test": "engineering", "spare_parts": 1},
+            "2": {"text": "Set the computer to auto-fix the line", "stat_test": null, "fuel_cost":2, "spare_parts": 1}
         }
     },
     "broken_bone": {
-        "issue": "",
+        "issue": "A crew member broke a bone during physical training",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Set the bone as best as you can.", "stat_test": null, "health_cost": 4},
+            "2": {"text": "Send the crew member to the Medic (requires Medic)", "stat_test": "medicine", "health_cost":1}
         }
     },
     "comms_down": {
-        "issue": "",
+        "issue": "Communications Array went down.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Fiddle with it and hopefully get it working", "stat_test": null, "spare_parts": 1},
+            "2": {"text": "Get the Engineer to fix it up good (requires Engineer)", "stat_test": "engineering", "base_fail_damage": 0}
         }
     },
     "unknown_creature": {
-        "issue": "",
+        "issue": "You encounter a strange creature in interstellar space",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Attack the creature", "stat_test": "piloting", "base_fail_damage": 20, "food_add": 2},
+            "2": {"text": "Attempt to communicate", "stat_test": "piloting", "base_fail_damage":20, "heal": 2}
         }
     },
     "speed_push": {
-        "issue": "",
+        "issue": "The engine team says you can attempt a hard burn.",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Tell them to 'Punch it' and buckle in", "stat_test": "Piloting", "base_fail_damage": 20, "fuel_cost": 10},
+            "2": {"text": "Tell them to 'Take it easy'", "stat_test": null, "base_fail_damage": 0}
         }
     },
     "warp_gate": {
-        "issue": "",
+        "issue": "You have stumbled upon an ancient Warp Gate",
         "choices": {
-            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
-            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+            "1": {"text": "Power it and attempt to pass through", "stat_test": "engineering", "base_fail_damage": 40},
+            "2": {"text": "Pass by, marking the location for later", "stat_test": null, "base_fail_damage": 0}
         }
     }
 }
