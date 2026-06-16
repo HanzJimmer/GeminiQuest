@@ -1,0 +1,100 @@
+{
+    "solar_flare": {
+        "issue": "A blinding radiation wave is approaching your hull!",
+        "choices": {
+            "1": {"text": "Shield overcharge (Requires Engineer)", "stat_test": "engineering", "base_fail_damage": 30},
+            "2": {"text": "Fly through the wake (Requires Pilot)", "stat_test": "piloting", "base_fail_damage": 50}
+        }
+    },
+    "space_pirates": {
+        "issue": "A rogue cruiser demands 10 units of fuel!",
+        "choices": {
+            "1": {"text": "Fight back (Requires Weapons Officer)", "stat_test": "combat", "base_fail_damage": 40},
+            "2": {"text": "Bribe them with fuel", "stat_test": None, "fuel_cost": 10}
+        }
+    },
+    "asteroid_belt": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "food_spoils": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "planet_encounter": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "derelict_encounter": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "dysentery": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "air_leak": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "fuel_leak": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "broken_bone": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "comms_down": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "unknown_creature": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "speed_push": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    },
+    "warp_gate": {
+        "issue": "",
+        "choices": {
+            "1": {"text": "", "stat_test": "", "base_fail_damage": 40},
+            "2": {"text": "", "stat_test": "piloting", "base_fail_damage":50}
+        }
+    }
+}

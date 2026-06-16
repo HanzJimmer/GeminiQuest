@@ -44,3 +44,6 @@ class Ship():
 
     def repair_shield(self, amount: int):
         self.ship_shields = min(self.ship_shields + amount, MAX_SHIP_SHIELDS_1)
+
+    def ship_to_json(self):
+        

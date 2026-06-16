@@ -1,4 +1,5 @@
 import sys
+import json
 from rich import print
 from rich.console import Console
 from rich.panel import Panel
@@ -27,9 +28,17 @@ from person import *
 
 #upon creating a new game, we need to initialize the crew (minimum 1 - captain)
 def main(): 
+    #initialize ship
     game_ship = Ship(new_crew())
     console = Console(style = "white on black", width=80, height=24)
     game_running = True
+
+    #retrieve event logs
+    event_database = get_events()
+
+
+
+    #initialize layout
     layout = Layout()
     layout.split_column(
         Layout(name = "game_view", ratio=1),
@@ -51,9 +60,15 @@ def main():
             console.print(layout)
             action = Prompt.ask("What is your command, Captain?")
             if action.lower() == "quit":
+                #with open("save_game.json", "w") as file:
+                    #json.dump(game_ship, file)
                 break
 #use rich.layout to create boxes and only update each part as needed
 
+
+def get_events():
+    with open("events.json", "r") as file:
+        return json.load(file)
 
 if __name__ == "__main__":
     main()
